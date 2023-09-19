@@ -21,16 +21,17 @@ public class Main {
     public static void main(String[] args) {
         Owner alex = new Owner("Alexey");
         Vaccination chumka = new Vaccination("chumka", LocalDate.of(2010, 12, 5));
-        Animal barsik = new Cat("barsik", 10.0, alex, LocalDate.now(), List.of(chumka), Color.BLACK, "siamskiy");
+        Animal barsik = new Cat("barsik", 10.0, alex, LocalDate.now(), List.of(chumka), Color.BLACK, Boolean.valueOf(false) , "siamskiy");
+
         System.out.println(barsik.getName());
 //        barsik.wakeUp();
         System.out.println(barsik.getVaccinations());
         barsik.setVaccinations(List.of(chumka, new Vaccination("столбняк", LocalDate.now())));
         System.out.println(barsik.getVaccinations());
-        Dog barbos = new Dog("barbos", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE, "Такса");
+        Dog barbos = new Dog("barbos", 10.0, alex, LocalDate.now(), List.of(chumka), Color.WHITE,true, "Такса");
         List<Animal> animals = new ArrayList<>(); // Список пациентов
         animals.add(barsik);
-        animals.add(barbos);
+       // animals.add(barbos);
         for (Animal animal : animals) {
             if (animal instanceof Cat) {
                 System.out.println(((Cat) animal).getBreed());
@@ -46,7 +47,8 @@ public class Main {
 //        barsik.toPlay();
 //        barsik.goToSleep();
 //        barsik.lifeCycle();
-
+        barsik.fly();
+        barbos.fly(); 
 
 //        System.out.println(barsik.getColor());
 //        System.out.println(barbos.getColor());
