@@ -9,11 +9,19 @@ public class Animal {
     private List<Vaccination> vaccinations;
     private Color color;
     private final String TYPE = this.getClass().getSimpleName();
-    private final Boolean flyingAnimal;
+    private  Boolean flyingAnimal;
+    //private Boolean swimmingAnimal;
    
 
-    public Animal(String name, double weight, Owner owner, LocalDate birthDay, List<Vaccination> vaccinations,
-                  Color color, Boolean flyingAnimal) {
+    public Animal(
+                String name,
+                double weight,
+                Owner owner,
+                LocalDate birthDay,
+                List<Vaccination> vaccinations,
+                Color color,
+                Boolean flyingAnimal
+                ) {
         this.name = name;
         this.weight = weight;
         this.owner = owner;
@@ -21,10 +29,18 @@ public class Animal {
         this.vaccinations = vaccinations;
         this.color = color;
         this.flyingAnimal = flyingAnimal;
+       
     }
 
-    public Animal(String name, double weight, Owner owner, LocalDate birthDay, Color color, Boolean flyingAnimal) {
-        this(name, weight, owner, birthDay, null, color, null);
+    public Animal(
+                String name,
+                double weight,
+                Owner owner,
+                LocalDate birthDay,
+                Color color,
+                Boolean flyingAnimal
+                ) {
+                this(name, weight, owner, birthDay, null, color, flyingAnimal);
     }
 
     public Animal(String name) {
@@ -51,7 +67,6 @@ public class Animal {
         }else{
             System.out.println(this.TYPE + " летать не способен!");
         }
-        
     }
 
     private void swim() {

@@ -13,7 +13,7 @@ public class Rat extends Animal {
                 Color color,
                 Boolean flyingAnimal,
                 String breed) {
-        super(name, weight, owner, birthDay, vaccinations, color, flyingAnimal);
+        super(name, weight, owner, birthDay, vaccinations, color, flyingAnimal = false);
         this.breed = breed;
     }
 
